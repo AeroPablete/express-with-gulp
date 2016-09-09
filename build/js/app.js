@@ -1,0 +1,7 @@
+'use strict';
+
+var _anotherModule = require('./another-module');
+
+var user = new _anotherModule.User();
+console.log(user);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpzL2FwcC5qcyJdLCJuYW1lcyI6WyJ1c2VyIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7QUFFQSxJQUFNQSxPQUFPLHlCQUFiO0FBQ0FDLFFBQVFDLEdBQVIsQ0FBWUYsSUFBWiIsImZpbGUiOiJqcy9hcHAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBVc2VyIH0gZnJvbSAnLi9hbm90aGVyLW1vZHVsZSc7XHJcblxyXG5jb25zdCB1c2VyID0gbmV3IFVzZXIoKTtcclxuY29uc29sZS5sb2codXNlcik7XHJcbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

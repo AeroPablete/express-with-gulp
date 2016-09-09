@@ -9,7 +9,7 @@ var express = require('express'),
 // Set App, Port and DataBase
 var app = express();
 var port = process.env.PORT || 3000;
-mongoose.connect('mongodb://localhost:27017/wer-app-db2');
+// mongoose.connect('mongodb://localhost:27017/wer-app-db2');
 
 // -- APP CONFIGURATION --
 // Use Body Parser so we can grab information from POST request
@@ -40,12 +40,12 @@ apiRouter.route('/set-data')
 app.use('/api', apiRouter);
 
 // -- Setup CLIENT --
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, 'build')));
 app.get('*', function(req, res) {
 
   // Load the single view file -- AngularJS will handle the page changes on the front-end
-  res.sendFile(path.join(__dirname, 'client/index.html'));
+  res.sendFile(path.join(__dirname, 'build/index.html'));
 });
 
 app.listen(port);
-console.log('Insert beer on port ' + port);
+console.log('App Running on Port ' + port);

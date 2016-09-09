@@ -2,6 +2,6 @@ export class User {
 
     constructor() {
         this.isHuman = true;
-        this.name = 'Pablo';
+        this.name = 'Pablo Oñate';
     }
 };

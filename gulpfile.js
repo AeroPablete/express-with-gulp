@@ -10,7 +10,7 @@ var src = 'build-src';
 // -- TASKS --
 gulp.task('libs', function() {
 
-    gulp.src([
+    return gulp.src([
         'node_modules/babel-polyfill/dist/polyfill.js',
         'node_modules/systemjs/dist/system.js'
     ])
@@ -19,7 +19,7 @@ gulp.task('libs', function() {
 
 gulp.task('js', function() {
 
-    gulp.src(src + '/**/*.js')
+    return gulp.src(src + '/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ['es2015'] }))
         .pipe(sourcemaps.write())
@@ -28,6 +28,15 @@ gulp.task('js', function() {
 
 gulp.task('build', ['libs', 'js'], function() {
 
-    gulp.src([src + '/**/*.html', src + '/**/*.css'])
+    return gulp.src([src + '/**/*.html', src + '/**/*.css'])
         .pipe(gulp.dest(dest))
+});
+
+gulp.task('serve', function() {
+
+    return nodemon({
+        script: 'server.js',
+        watch: ['build-src'],   // File to watch for changes
+        tasks: ['build']        // Task to run before start the server again
+    })
 });
